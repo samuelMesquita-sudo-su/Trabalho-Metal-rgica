@@ -1,1 +1,23 @@
-teste
+import java.util.*;
+
+public class Codigo {
+
+	public static void main(String[] args) { 
+		Scanner scan = new Scanner(System.in);
+		System.out.println("----Menu---- \n1- Cadastro de setores \n2- Relátório \n3- Sair");
+		int opção = scan.nextInt();
+		
+		switch(opção){
+		case 1:
+			
+		case 2:
+			
+		case 3:	
+		
+		}
+		
+		
+
+	}
+
+}
