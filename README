@@ -1,2 +1,6 @@
   O objetivo principal desse código é auxiliar a empresa metalúrigica a manter em ordem toda a produção de peças em suas máquinas, separando as informações por setores
-a
+
+                              COMO USAR
+  digite "1" para cadastro de setores,máquinas e peças;
+  digite "2" para o relatório;
+  digite "3" para sair do sistema;
