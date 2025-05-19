@@ -1,20 +1,18 @@
 package teste;
 import java.util.*;
 
-import java.util.*;
-
 public class Codigo {
 	static ArrayList<Integer> setores = new ArrayList<>(); 
 	static ArrayList<Integer> qtdpecas = new ArrayList<>();
 	static ArrayList<Integer> qtdMaquinas = new ArrayList<>();
+	static int quantidade;
+	static int maquinas;
+	static int pecas;
 
 	public static void cadastrar(Scanner scan){
 		System.out.println("Digite a quantidade de setores");
-		int quantidade = scan.nextInt();
-		setores.add(quantidade);
+		quantidade = scan.nextInt();
 
-		int maquinas;
-		int pecas;
 
 		for (int i=0; i < quantidade; i++)
 		{
@@ -26,28 +24,40 @@ public class Codigo {
 				pecas = scan.nextInt();
 				qtdpecas.add(pecas);
 			}
-
 		}
-
+	}
+	
+	public static void checar() {
+		int pecas = 0;
+		for (int i = 0; i < quantidade; i++) {
+			System.out.println("Setor " + (i+1) + "\n");
+			for(int j = 0; j < qtdMaquinas.get(i); j++) {
+				if (qtdpecas.get(pecas) < 10) {
+					System.out.println("Máquina " + (j+1) + " produziu: " + qtdpecas.get(pecas) + " *Abaixo do limite*");
+				}else {
+					System.out.println("Máquina " + (j+1) + " produziu: " + qtdpecas.get(pecas));
+				}
+				pecas ++;
+			}
+		}
 	}
 
 	public static void main(String[] args) { 
-		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("----Menu---- \n1- Cadastro de setores \n2- Relátório \n3- Sair");
+			while (true) {
+				System.out.println("----Menu---- \n1- Cadastro de setores \n2- Relátório \n3- Sair");
 		int opcao = scan.nextInt();
-		
-		switch(opcao){
-		case 1:
-			cadastrar(scan);
-		case 2:
-			
-		case 3:	
-		
+				switch(opcao){
+			case 1:
+				cadastrar(scan);
+				break;
+			case 2:
+				checar();
+				break;
+			case 3:	
+				System.exit(1);
+				break;
+			}
 		}
-		
-		
-		
 	}
-
 }
