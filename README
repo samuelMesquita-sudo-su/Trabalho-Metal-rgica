@@ -1,6 +1,18 @@
   O objetivo principal desse código é auxiliar a empresa metalúrigica a manter em ordem toda a produção de peças em suas máquinas, separando as informações por setores
 
-                              COMO USAR
-  digite "1" para cadastro de setores,máquinas e peças;
-  digite "2" para o relatório;
-  digite "3" para sair do sistema;
+                      COMO USAR
+  Digite "1" para cadastro de setores,máquinas e peças;
+  Digite "2" para o relatório;
+  Digite "3" para sair do sistema;
+
+
+                      CADASTRO
+
+Após digitar 1, você será transferido para a área de cadastro de setores, máquinas, e peças produzidas por máquinas.
+Para utilizar apenas:
+  1: Digite o número de setores existentes
+  2: Digite o número de máquinas em cada setor
+  3: Digite o número de peças produzidas (na máquina do setor atual)
+  4: Caso haja mais de um setor, apenas repita as etapas 3 e 4
+
+                    
