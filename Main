@@ -18,7 +18,7 @@ public class Codigo {
 		for (int i=0; i < quantidade; i++) {  // loop para cada setor
 			int produção = 0;
 			System.out.println("Digite quanto tem de máquinas neste setor " + (i + 1));
-			maquinas = scan.nextInt();
+			maquinas = scan.nextInt();	
 			qtdMaquinas.add(maquinas);
 			for (int j = 0 ; j < maquinas; j++){	// loop para cada máquina de cada setor
 				System.out.println("Quantas peças a máquina " + (j + 1) + " produziu: ");
@@ -51,7 +51,7 @@ public class Codigo {
 			}
 			
 			for(int j = 0; j < qtdMaquinas.get(i); j++) {
-				if (qtdpecas.get(pecas) < 10) {
+				if (qtdpecas.get(pecas) < 10) {		//verificação da quantidade de pecas
 					System.out.println("Máquina " + (j+1) + " produziu: " + qtdpecas.get(pecas) + " *Abaixo do limite*");
 				}else {
 					System.out.println("Máquina " + (j+1) + " produziu: " + qtdpecas.get(pecas));
@@ -63,7 +63,7 @@ public class Codigo {
 
 	public static void main(String[] args) { 
 		Scanner scan = new Scanner(System.in);
-			while (true) {
+			while (true) {		//loop de repetição
 				System.out.println("----Menu---- \n1- Cadastro de setores \n2- Relátório \n3- Sair");
 		int opcao = scan.nextInt();
 				switch(opcao){
@@ -76,6 +76,8 @@ public class Codigo {
 			case 3:	
 				System.exit(1);
 				break;
+			default:
+				System.out.println("Opção Inválida");
 			}
 		}
 	}
