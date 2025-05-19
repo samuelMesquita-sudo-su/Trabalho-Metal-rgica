@@ -1,8 +1,11 @@
+package teste;
+import java.util.*;
+
 import java.util.*;
 
 public class Codigo {
 	static ArrayList<Integer> setores = new ArrayList<>(); 
-	static ArrayList<Integer> pecas = new ArrayList<>();
+	static ArrayList<Integer> qtdpecas = new ArrayList<>();
 	static ArrayList<Integer> qtdMaquinas = new ArrayList<>();
 
 	public static void cadastrar(Scanner scan){
@@ -15,11 +18,13 @@ public class Codigo {
 
 		for (int i=0; i < quantidade; i++)
 		{
-			System.out.println("Digite quanto tem de máquinas neste setor: ");
+			System.out.println("Digite quanto tem de máquinas neste setor " + (i + 1));
 			maquinas = scan.nextInt();
 			qtdMaquinas.add(maquinas);
 			for (int j = 0 ; j < maquinas; j++){
-				System.out.println("")
+				System.out.println("Quantas peças a máquina " + (j + 1) + " produziu: ");
+				pecas = scan.nextInt();
+				qtdpecas.add(pecas);
 			}
 
 		}
@@ -34,7 +39,7 @@ public class Codigo {
 		
 		switch(opcao){
 		case 1:
-			//cadastro de setores
+			cadastrar(scan);
 		case 2:
 			
 		case 3:	
