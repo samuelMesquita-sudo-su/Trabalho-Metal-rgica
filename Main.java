@@ -104,14 +104,17 @@ public class Codigo {
 		int total1 = 0;
 		int total2 = 0;
 		int total3 = 0;
-			for (int i = 0; i < peças1.size(); i++) {
-				total1 += peças1.get(i);
-				total2 += peças2.get(i);
-				total3 += peças3.get(i);
-			}
+				for (int i = 0; i < peças1.size(); i++) {
+					total1 += peças1.get(i);
+				}for (int i = 0; i < peças2.size(); i++) {
+					total2 += peças2.get(i);
+				}for (int i = 0; i < peças3.size(); i++) {
+					total3 += peças3.get(i);
+				}
 			System.out.println("Prudução de peças grandes: " + total1);
 			System.out.println("Prudução de peças médias: " + total2);
 			System.out.println("Prudução de peças pequenas: " + total3);
+		
 	}
 	public static void main(String[] args) { 
 		Scanner scan = new Scanner(System.in);
