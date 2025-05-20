@@ -1,1 +1,2 @@
-
+João Vitor cuidou do Front-end;
+João Henrique e Samuel E. trabalharam no Beck-end;
