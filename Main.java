@@ -13,7 +13,7 @@ public class Codigo {
 	static int pecas;
 	
 
-	public static void cadastrar(Scanner scan){
+	public static void cadastrar(Scanner scan){	//Aqui você cadastra cada setor e suas respectivas máquinas
 		System.out.println("Digite a quantidade de setores");
 		quantidade = scan.nextInt();
 
@@ -27,7 +27,7 @@ public class Codigo {
 				pecas = scan.nextInt();
 				qtdpecas.add(pecas);
 				System.out.println("Qual o tipo de peças produzidas na máquina "+ (j+1) + "? [1-Grande 2-Média 3-Pequena]");
-				int op = scan.nextInt();
+				int op = scan.nextInt();   //scan para o tipo de peça escolhida, será usado no switch-case
 				switch (op) {
 				case 1: 
 					peças1.add(pecas);
@@ -47,16 +47,16 @@ public class Codigo {
 		}
 	}
 	
-	public static void relatórioGeral() {
+	public static void relatórioGeral() {	//relatório de todas as informações disponíveis
 		Scanner scan = new Scanner(System.in);
-		if (quantidade == 0 ) {
+		if (quantidade == 0 ) {	//Caso não haja setores cadastrados ainda
 			System.out.println("Nenhum setor cadastrado");
 		}
-		else {
+		else {			//Caso haja setores cadastrados
 			int pecas = 0;		//Variável para as peças produzidas em cada máquina
-		int produtivo = 0;  //Variável do setor mais produtivo
+		int produtivo = 0;  		//Variável do setor mais produtivo
 		int x = 0;			//Variável para usar no for loop a seguir
-		for (int i = 0; i < maisProdutivo.size(); i ++) {	 // Verifica qual setor foi mais produtivo
+		for (int i = 0; i < maisProdutivo.size(); i ++) {	// Verifica qual setor foi mais produtivo
 			if (x < maisProdutivo.get(i)) {
 				x = maisProdutivo.get(i);
 				produtivo = i;
@@ -65,16 +65,16 @@ public class Codigo {
 		}
 		
 		for (int i = 0; i < quantidade; i++) {  //Relatório de cada máquina de cada setor
-			if (i == produtivo) {
+			if (i == produtivo) {	//Caso i do loop seja igual ao número da variável produtivo, o setor atual será printado como o mais produtivo
 				System.out.println("\nSetor " + (i+1) + ": *Mais produtivo*\n");
 			}else {
 				System.out.println("\nSetor " + (i+1) + ":\n");
 			}
 			
-			for(int j = 0; j < qtdMaquinas.get(i); j++) {
-				if (qtdpecas.get(pecas) < 10) {		//verificação da quantidade de pecas
+			for(int j = 0; j < qtdMaquinas.get(i); j++) {	//verificação da quantidade de pecas
+				if (qtdpecas.get(pecas) < 10) {		//caso as peças produzidas estejam abaixo do limite
 					System.out.println("Máquina " + (j+1) + " produziu: " + qtdpecas.get(pecas) + " *Abaixo do limite*");
-				}else {
+				}else {					//caso as peças produzidas estejam acima do limite
 					System.out.println("Máquina " + (j+1) + " produziu: " + qtdpecas.get(pecas));
 				}
 				pecas ++;
