@@ -1,2 +1,2 @@
-João Vitor cuidou do Front-end;
-João Henrique e Samuel E. trabalharam no Beck-end;
+João Vitor cuidou do Front-end, programação em HTML e CSS;
+João Henrique e Samuel E. trabalharam no Beck-end, fazer o código principal e as respectivas funções dele;
