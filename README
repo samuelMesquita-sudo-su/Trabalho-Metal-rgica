@@ -13,7 +13,7 @@ Após digitar 1, você será transferido para a área de cadastro de setores, m�
 Para utilizar apenas:
   1: Digite o número de setores existentes
   2: Digite o número de máquinas em cada setor
-  3: Digite o número de peças produzidas (na máquina do setor atual)
+  3: Digite o número e tipo de peças produzidas (na máquina do setor atual)
   4: Caso haja mais de um setor, apenas repita as etapas 3 e 4
 
                     
