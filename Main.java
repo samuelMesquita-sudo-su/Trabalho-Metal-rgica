@@ -34,7 +34,7 @@ public class Codigo {
 				System.out.println("Error");
 				j--;
 				continue;
-			}else {
+			}
 				qtdpecas.add(pecas);
 				System.out.println("Qual o tipo de peças produzidas na máquina "+ (j+1) + "? [1-Grande 2-Média 3-Pequena]");
 				int op = scan.nextInt();
@@ -52,7 +52,7 @@ public class Codigo {
 					System.out.println("Opção inválida");
 					continue;
 				}	
-			}
+			
 			produção += pecas;
 		}
 			
