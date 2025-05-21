@@ -47,7 +47,6 @@ public class Codigo {
 	}
 	
 	public static void relatórioGeral() {
-		Scanner scan = new Scanner(System.in);
 		if (quantidade == 0 ) {
 			System.out.println("Nenhum setor cadastrado");
 		}
@@ -99,7 +98,6 @@ public class Codigo {
 		
 	
 	public static void relatórioPeças(){
-		Scanner scan = new Scanner(System.in);
 		System.out.println("\nProdução por tipo de peça: \n");
 		int total1 = 0;
 		int total2 = 0;
