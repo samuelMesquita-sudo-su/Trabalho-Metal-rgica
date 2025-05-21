@@ -18,6 +18,11 @@ public class Codigo {
 		System.out.println("Setor " + quantidade + "\n");
 		System.out.println("Qual a quantidade de máquinas desse setor:");
 		maquinas = scan.nextInt();
+		if (maquinas <= 0) {
+			System.out.println("Valor inváldio");
+			quantidade --; 
+			return;
+		}
 		qtdMaquinas.add(maquinas);
 		
 		int produção = 0;
