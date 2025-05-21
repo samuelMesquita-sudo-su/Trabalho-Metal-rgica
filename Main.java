@@ -30,24 +30,32 @@ public class Codigo {
 			
 			System.out.println("Quantas peças a máquina " + (j + 1) + " produziu: ");
 			pecas = scan.nextInt();
-			qtdpecas.add(pecas);
-			System.out.println("Qual o tipo de peças produzidas na máquina "+ (j+1) + "? [1-Grande 2-Média 3-Pequena]");
-			int op = scan.nextInt();
-			switch (op) {
-			case 1: 
-				peças1.add(pecas);
-				break;
-			case 2: 
-				peças2.add(pecas);
-				break;
-			case 3: 
-				peças3.add(pecas);
-				break;
-			default:
-				System.out.println("Opção inválida");
+			if (pecas < 0) {
+				System.out.println("Error");
+				j--;
+				continue;
+			}else {
+				qtdpecas.add(pecas);
+				System.out.println("Qual o tipo de peças produzidas na máquina "+ (j+1) + "? [1-Grande 2-Média 3-Pequena]");
+				int op = scan.nextInt();
+				switch (op) {
+				case 1: 
+					peças1.add(pecas);
+					break;
+				case 2: 
+					peças2.add(pecas);
+					break;
+				case 3: 
+					peças3.add(pecas);
+					break;
+				default:
+					System.out.println("Opção inválida");
+					continue;
+				}	
 			}
-			produção += pecas;	
+			produção += pecas;
 		}
+			
 		maisProdutivo.add(produção);
 	}
 	
