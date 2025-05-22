@@ -111,6 +111,9 @@ public class Codigo {
 		
 	
 	public static void relatórioPeças(){
+		if (quantidade == 0 ) {
+			System.out.println("Nenhum setor cadastrado");
+		}
 		System.out.println("\nProdução por tipo de peça: \n");
 		int total1 = 0;
 		int total2 = 0;
