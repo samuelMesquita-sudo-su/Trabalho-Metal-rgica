@@ -73,6 +73,9 @@ public class Codigo {
 				x = maisProdutivo.get(i);
 				produtivo = i;
 				System.out.println(i);
+			}else if (maisProdutivo.get(i) == maisProdutivo.get(x)) {
+				produtivo = 0;
+				break;
 			}
 		}
 		
