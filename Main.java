@@ -61,40 +61,43 @@ public class Codigo {
 	}
 	
 	public static void relatórioGeral() {
-		if (quantidade == 0 ) {
-			System.out.println("Nenhum setor cadastrado");
-		}
-		else {
-		int pecas = 0;		//Variável para as peças produzidas em cada máquina
-		int produtivo = 0;  //Variável do setor mais produtivo
-		int x = 0;			//Variável para usar no for loop a seguir
-		for (int i = 0; i < maisProdutivo.size(); i ++) {	 // Verifica qual setor foi mais produtivo
-			if (x < maisProdutivo.get(i)) {
-				x = maisProdutivo.get(i);
-				produtivo = i;
-				System.out.println(i);
-			}else if (maisProdutivo.get(i) == maisProdutivo.get(x)) {
-				produtivo = 0;
-				break;
-			}
-		}
-		
-		for (int i = 0; i < quantidade; i++) {  //Relatório de cada máquina de cada setor
-			if (i == produtivo) {
-				System.out.println("\nSetor " + (i+1) + ": *Mais produtivo*\n");
-			}else {
-				System.out.println("\nSetor " + (i+1) + ":\n");
-			}
-			
-			for(int j = 0; j < qtdMaquinas.get(i); j++) {
-				if (qtdpecas.get(pecas) < 10) {		//verificação da quantidade de pecas
-					System.out.println("Máquina " + (j+1) + " produziu: " + qtdpecas.get(pecas) + " *Abaixo do limite*");
-				}else {
-					System.out.println("Máquina " + (j+1) + " produziu: " + qtdpecas.get(pecas));
-				}
-				pecas ++;
-				}
-			}
+	    if (quantidade == 0) {
+	        System.out.println("Nenhum setor cadastrado");
+	    } else {
+	        int pecas = 0; // Variável para as peças produzidas em cada máquina
+	        int maiorProdução = 0; // Variável para armazenar o maior nível de produção
+	        List<Integer> setoresMaisProdutivos = new ArrayList<>(); // Lista para armazenar os setores mais produtivos
+	        // Primeiro loop para encontrar o maior nível de produção
+	        for (int i = 0; i < maisProdutivo.size(); i++) {
+	            int produçãoAtual = maisProdutivo.get(i);
+	            if (produçãoAtual > maiorProdução) {
+	                maiorProdução = produçãoAtual;
+	                setoresMaisProdutivos.clear(); // Limpa a lista se um novo maior for encontrado
+	                setoresMaisProdutivos.add(i); // Adiciona o setor atual
+	            } else if (produçãoAtual == maiorProdução) {
+	                setoresMaisProdutivos.add(i); // Adiciona o setor atual em caso de empate
+	            }
+	        }
+	        System.out.println("Maior produção: " + maiorProdução);
+	        // Segundo loop para gerar o relatório de cada máquina de cada setor
+	        for (int i = 0; i < quantidade; i++) {
+	            if (setoresMaisProdutivos.contains(i)) {
+	                if (setoresMaisProdutivos.size() > 1) {
+	                    System.out.println("\nSetor " + (i + 1) + ": *Um dos mais produtivos*\n");
+	                } else {
+	                    System.out.println("\nSetor " + (i + 1) + ": *O mais produtivo*\n");
+	                }
+	            } else {
+	                System.out.println("\nSetor " + (i + 1) + ":\n");
+	            }
+	            for (int j = 0; j < qtdMaquinas.get(i); j++) {
+	                if (qtdpecas.get(pecas) < 10) { // Verificação da quantidade de peças
+	                    System.out.println("Máquina " + (j + 1) + " produziu: " + qtdpecas.get(pecas) + " *Abaixo do limite*");
+	                } else {
+	                    System.out.println("Máquina " + (j + 1) + " produziu: " + qtdpecas.get(pecas));
+	                }
+	            }
+	        }
 
 		System.out.println("\nProdução por tipo de peça: \n");	//Essa parte mostra a produção por tipo de peça
 		int total1 = 0;
