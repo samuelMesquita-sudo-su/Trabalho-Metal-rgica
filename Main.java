@@ -54,9 +54,9 @@ public class Codigo {
 						continue;
 					}	
 					break;
-				}
+			    }
+            produção += pecas;
 		}
-		produção += pecas;
 		maisProdutivo.add(produção);
 	}
 	
@@ -69,12 +69,11 @@ public class Codigo {
 	        List<Integer> setoresMaisProdutivos = new ArrayList<>(); // Lista para armazenar os setores mais produtivos
 	        // Primeiro loop para encontrar o maior nível de produção
 	        for (int i = 0; i < maisProdutivo.size(); i++) {
-	            int produçãoAtual = maisProdutivo.get(i);
-	            if (produçãoAtual > maiorProdução) {
-	                maiorProdução = produçãoAtual;
+	            if (maisProdutivo.get(i) > maiorProdução) {
+	                maiorProdução = maisProdutivo.get(i);
 	                setoresMaisProdutivos.clear(); // Limpa a lista se um novo maior for encontrado
 	                setoresMaisProdutivos.add(i); // Adiciona o setor atual
-	            } else if (produçãoAtual == maiorProdução) {
+	            } else if (maisProdutivo.get(i) == maiorProdução) {
 	                setoresMaisProdutivos.add(i); // Adiciona o setor atual em caso de empate
 	            }
 	        }
@@ -96,6 +95,7 @@ public class Codigo {
 	                } else {
 	                    System.out.println("Máquina " + (j + 1) + " produziu: " + qtdpecas.get(pecas));
 	                }
+                    pecas++;
 	            }
 	        }
 
